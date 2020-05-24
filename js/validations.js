@@ -182,13 +182,15 @@ function passwordStrengthChecker()
 let regExPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*])(?=.*[0-9])(?!.*\s).{8,}$/
 let passWord = document.getElementById("passwordText");
 let passwordStrength="";
-
+        document.getElementById('passwordText').style.backgroundColor="white";
+        document.getElementById("passwordHelp").textContent="";
     if((passWord.value.trim()==""))
     {
         document.getElementById("passwordHelp").textContent="no white space is allowed";
         document.getElementById("passwordHelp").classList.remove('good');
         document.getElementById("passwordHelp").classList.remove('text-warning');
         document.getElementById("passwordHelp").classList.add('wrong');
+        document.getElementById('passwordText').style.backgroundColor='white';
     }
     else
     {
@@ -202,7 +204,8 @@ let passwordStrength="";
                 document.getElementById("passwordHelp").classList.add('good');
                             //          --- if contains atleast 3 num:
                             //          --- if contains atleat 2 special chars: 
-                passwordStrength='strength:good';
+                passwordStrength='Strength:Good ✌';
+                document.getElementById('passwordText').style.backgroundColor="#cb9de0";
                             //whether contains 3 numbers
                 for(let i=0;i<10;i++)
                 {
@@ -232,17 +235,20 @@ let passwordStrength="";
                 }
                 if((numberCount==3)&&(speclCharCount==2))
                 {
-                    passwordStrength='strength:strong';
+                    passwordStrength='Strong Password 💪';
+                    document.getElementById('passwordText').style.backgroundColor="#4eed39";
                 }
                 else
                 {
                     if(numberCount==3)
                     {
-                        passwordStrength='strength:better';
+                        passwordStrength='Strength:Better 😃';
+                        document.getElementById('passwordText').style.backgroundColor="#b9f054";
                     }
                     if(speclCharCount==2)
                     {
-                        passwordStrength='strength:better';
+                        passwordStrength='Strength:Better 😃';
+                        document.getElementById('passwordText').style.backgroundColor="#b9f054";
                     }
                 }            //assigning password strength
                     document.getElementById("passwordHelp").textContent=passwordStrength; 
@@ -292,7 +298,7 @@ function checkPassword()
             
                   //             --- if contains atleast 3 num:
                   //             --- if contains atleat 2 special chars: 
-            passwordStrength='strength:good';
+            passwordStrength='Strength:Good ✌';
                     //whether contains 3 numbers
             for(let i=0;i<10;i++)
             {
@@ -322,17 +328,17 @@ function checkPassword()
             }
             if((numberCount==3)&&(speclCharCount==2))
             {
-                passwordStrength='strength:strong';
+                passwordStrength='Strong Password 💪';
             }
             else
             {
                 if(numberCount==3)
                 {
-                    passwordStrength='strength:better';
+                    passwordStrength='Strength:Better 😃';
                 }
                 if(speclCharCount==2)
                 {
-                    passwordStrength='strength:better';
+                    passwordStrength='Strength:Better 😃';
                 }
             }
             document.getElementById("passwordHelp").textContent=passwordStrength; //assigning password strength
